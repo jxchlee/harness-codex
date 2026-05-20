@@ -32,9 +32,9 @@
     "defaultPrompt": [
       "Create a minimal Codex harness plan for this repo.",
       "하네스 사용해서 이 프로젝트 구조를 정리해줘.",
+      "Use harness mode to suggest a harness plan, but do not edit files yet.",
       "Suggest Codex skills and automations for this repo."
     ],
     "brandColor": "#2563EB"
   }
 }
-

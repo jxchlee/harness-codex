@@ -21,10 +21,24 @@ $harness
 Create a minimal Codex harness plan for this repo.
 ```
 
-Or use natural language:
+### Korean Examples
 
 ```text
 하네스 사용해서 이 프로젝트에 맞는 Codex 스킬과 자동화 제안을 만들어줘.
+```
+
+```text
+하네스로 AGENTS.md와 필요한 Codex skills를 제안해줘.
+```
+
+### English Examples
+
+```text
+Use harness mode to analyze this repo and propose project-specific Codex skills.
+```
+
+```text
+Use harness mode to suggest a harness plan, but do not edit files yet.
 ```
 
 ## Local Development
@@ -45,4 +59,3 @@ PowerShell:
 Get-Content .agents/plugins/marketplace.json | ConvertFrom-Json | Out-Null
 Get-Content plugins/harness-codex/.codex-plugin/plugin.json | ConvertFrom-Json | Out-Null
 ```
-

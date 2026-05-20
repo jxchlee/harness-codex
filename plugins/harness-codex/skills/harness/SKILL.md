@@ -119,6 +119,23 @@ These phrases should trigger this skill when available:
 이 repo에 맞는 자동화 하네스를 만들어줘.
 ```
 
+## English Invocation Examples
+
+These phrases should trigger this skill when available:
+
+```text
+Use harness mode to analyze this repo and propose project-specific Codex skills.
+```
+
+```text
+Use harness mode to suggest a harness plan, but do not edit files yet.
+```
+
+```text
+$harness
+Create a minimal Codex harness plan for this repo.
+```
+
 ## Output Style
 
 When the task is complete, include:
@@ -129,4 +146,3 @@ When the task is complete, include:
 - any validation that could not be performed
 
 Keep the final response concise.
-

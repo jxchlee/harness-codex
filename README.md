@@ -1,4 +1,4 @@
-# Harness Codex
+﻿# Harness Codex
 
 Harness Codex is a Codex-native guided workflow skill for shaping a lightweight project harness. It helps Codex inspect a repository, propose useful project instructions, and optionally create small, reviewable skills, review loops, subagent guidance, and automation suggestions.
 
@@ -65,7 +65,21 @@ $harness
 Create a minimal Codex harness plan for this repo.
 ```
 
-You can also ask naturally:
+### Korean Examples
+
+```text
+하네스 사용해서 이 프로젝트 구조를 정리해줘.
+```
+
+```text
+하네스로 AGENTS.md와 필요한 Codex skills를 제안해줘.
+```
+
+```text
+이 repo에 맞는 자동화 하네스 계획을 제안해줘.
+```
+
+### English Examples
 
 ```text
 Use harness mode to analyze this repo and propose project-specific Codex skills.

@@ -20,17 +20,27 @@ Example install flow:
 codex plugin marketplace add jxchlee/harness-codex
 ```
 
-After installing the plugin, the user can start a Codex session and say:
+After installing the plugin, the user can start a Codex session and use either Korean or English invocation examples.
+
+### Korean Examples
+
+```text
+하네스 사용해서 이 프로젝트에 맞는 자동화/스킬 구조를 제안해줘.
+```
+
+```text
+하네스로 이 프로젝트의 AGENTS.md와 필요한 skills를 제안해줘.
+```
+
+### English Examples
 
 ```text
 $harness
 Analyze this repository and create a Codex harness plan for it.
 ```
 
-or:
-
 ```text
-하네스 사용해서 이 프로젝트에 맞는 자동화/스킬 구조를 제안해줘.
+Use harness mode to analyze this repo and propose project-specific Codex skills.
 ```
 
 The plugin should expose a `harness` skill whose description is broad enough for Codex to trigger it when the user says "harness", "하네스", "하네스 사용", "project harness", "automation harness", or asks Codex to organize reusable project workflows.
@@ -97,13 +107,25 @@ It should avoid adding custom MCP servers, complex scripts, or hidden automation
 
 ## Invocation Examples
 
-```text
-$harness
-Create a minimal Codex harness plan for this repo.
-```
+### Korean Examples
 
 ```text
 하네스 사용. 이 코드베이스에서 반복되는 개발/검증 작업을 Codex skill로 정리해줘.
+```
+
+```text
+하네스로 이 프로젝트의 AGENTS.md와 필요한 skills를 제안해줘.
+```
+
+```text
+이 repo에 맞는 자동화 하네스 계획을 제안해줘.
+```
+
+### English Examples
+
+```text
+$harness
+Create a minimal Codex harness plan for this repo.
 ```
 
 ```text
@@ -111,7 +133,7 @@ Use harness mode to analyze the repo and suggest subagent roles, but do not edit
 ```
 
 ```text
-하네스로 이 프로젝트의 AGENTS.md와 필요한 skills를 만들어줘.
+Use harness mode to propose Codex skills and automation ideas for this repo.
 ```
 
 ## Safety And Editing Rules
@@ -172,4 +194,3 @@ That skill should analyze a repository and then offer to create:
 - optional documentation under `docs/harness/`
 
 This gives users the feeling of "download and say 하네스 사용" without pretending Claude Harness files can run unchanged inside Codex.
-
