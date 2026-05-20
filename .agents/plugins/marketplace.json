@@ -1,0 +1,21 @@
+{
+  "name": "jxchlee-harness-codex",
+  "interface": {
+    "displayName": "Harness Codex"
+  },
+  "plugins": [
+    {
+      "name": "harness-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/harness-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
+

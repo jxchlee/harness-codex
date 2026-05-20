@@ -1,0 +1,40 @@
+﻿{
+  "name": "harness-codex",
+  "version": "0.1.0",
+  "description": "A Codex-native guided workflow skill for repository-specific instructions, skills, review loops, and automation suggestions.",
+  "author": {
+    "name": "jxchlee",
+    "email": "",
+    "url": "https://github.com/jxchlee"
+  },
+  "homepage": "https://github.com/jxchlee/harness-codex",
+  "repository": "https://github.com/jxchlee/harness-codex",
+  "license": "Apache-2.0",
+  "keywords": [
+    "codex",
+    "harness",
+    "skills",
+    "agents",
+    "automation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness Codex",
+    "shortDescription": "Guide Codex through a project harness workflow.",
+    "longDescription": "Harness Codex helps Codex analyze a repository, propose a minimal project harness, and optionally create reviewable instructions, skills, review loops, and automation suggestions.",
+    "developerName": "jxchlee",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jxchlee/harness-codex",
+    "defaultPrompt": [
+      "Create a minimal Codex harness plan for this repo.",
+      "하네스 사용해서 이 프로젝트 구조를 정리해줘.",
+      "Suggest Codex skills and automations for this repo."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
+
