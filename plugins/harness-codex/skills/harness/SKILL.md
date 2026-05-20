@@ -5,6 +5,8 @@ description: Use when the user says harness, 하네스, 하네스 사용, projec
 
 # Harness
 
+Invocation examples: [KO](#ko-invocation-examples) | [EN](#en-invocation-examples)
+
 Harness mode is a guided workflow for shaping a small Codex-native operating layer for a repository. It helps Codex understand how the project works, then propose or create project instructions, local skills, review checklists, and optional automation ideas.
 
 Do not assume Claude `.claude/*` files can run directly in Codex. Preserve the workflow idea, but express the result using Codex-native files and behavior.
@@ -103,7 +105,7 @@ If a project contains Claude Harness files:
 - Convert slash-command language into skill triggers and natural language examples.
 - Explain compatibility gaps clearly.
 
-## Korean Invocation Examples
+## KO Invocation Examples
 
 These phrases should trigger this skill when available:
 
@@ -119,7 +121,7 @@ These phrases should trigger this skill when available:
 이 repo에 맞는 자동화 하네스를 만들어줘.
 ```
 
-## English Invocation Examples
+## EN Invocation Examples
 
 These phrases should trigger this skill when available:
 

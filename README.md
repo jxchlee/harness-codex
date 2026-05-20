@@ -1,5 +1,7 @@
 ﻿# Harness Codex
 
+Usage examples: [KO](#ko-usage) | [EN](#en-usage)
+
 Harness Codex is a Codex-native guided workflow skill for shaping a lightweight project harness. It helps Codex inspect a repository, propose useful project instructions, and optionally create small, reviewable skills, review loops, subagent guidance, and automation suggestions.
 
 This project adapts the workflow idea behind Claude Harness into Codex primitives:
@@ -65,7 +67,7 @@ $harness
 Create a minimal Codex harness plan for this repo.
 ```
 
-### Korean Examples
+### KO Usage
 
 ```text
 하네스 사용해서 이 프로젝트 구조를 정리해줘.
@@ -79,7 +81,7 @@ Create a minimal Codex harness plan for this repo.
 이 repo에 맞는 자동화 하네스 계획을 제안해줘.
 ```
 
-### English Examples
+### EN Usage
 
 ```text
 Use harness mode to analyze this repo and propose project-specific Codex skills.

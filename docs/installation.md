@@ -1,5 +1,7 @@
 ﻿# Installation
 
+Invocation examples: [KO](#ko-invocation-examples) | [EN](#en-invocation-examples)
+
 Harness Codex is designed to be installed as a Codex plugin from a GitHub-backed marketplace repository.
 
 At this stage, it is a guided workflow skill. It helps Codex analyze a project and propose or create a small harness when the user asks.
@@ -21,7 +23,7 @@ $harness
 Create a minimal Codex harness plan for this repo.
 ```
 
-### Korean Examples
+### KO Invocation Examples
 
 ```text
 하네스 사용해서 이 프로젝트에 맞는 Codex 스킬과 자동화 제안을 만들어줘.
@@ -31,7 +33,7 @@ Create a minimal Codex harness plan for this repo.
 하네스로 AGENTS.md와 필요한 Codex skills를 제안해줘.
 ```
 
-### English Examples
+### EN Invocation Examples
 
 ```text
 Use harness mode to analyze this repo and propose project-specific Codex skills.

@@ -1,5 +1,7 @@
 ﻿# Harness Codex Overview
 
+Invocation examples: [KO](#ko-invocation-examples) | [EN](#en-invocation-examples)
+
 Harness Codex is a Codex-native adaptation of the Claude Harness idea: a guided workflow skill that helps Codex analyze a repository, propose a lightweight project harness, and optionally create domain-specific skills, subagent guidance, review loops, and repeatable work plans.
 
 The goal is not to run Claude's `.claude/*` harness files directly. The goal is to preserve the useful workflow pattern and express it using Codex-native primitives:
@@ -20,9 +22,9 @@ Example install flow:
 codex plugin marketplace add jxchlee/harness-codex
 ```
 
-After installing the plugin, the user can start a Codex session and use either Korean or English invocation examples.
+After installing the plugin, the user can start a Codex session and use either KO or EN invocation examples.
 
-### Korean Examples
+### KO Invocation Examples
 
 ```text
 하네스 사용해서 이 프로젝트에 맞는 자동화/스킬 구조를 제안해줘.
@@ -32,7 +34,7 @@ After installing the plugin, the user can start a Codex session and use either K
 하네스로 이 프로젝트의 AGENTS.md와 필요한 skills를 제안해줘.
 ```
 
-### English Examples
+### EN Invocation Examples
 
 ```text
 $harness
@@ -107,7 +109,7 @@ It should avoid adding custom MCP servers, complex scripts, or hidden automation
 
 ## Invocation Examples
 
-### Korean Examples
+### KO
 
 ```text
 하네스 사용. 이 코드베이스에서 반복되는 개발/검증 작업을 Codex skill로 정리해줘.
@@ -121,7 +123,7 @@ It should avoid adding custom MCP servers, complex scripts, or hidden automation
 이 repo에 맞는 자동화 하네스 계획을 제안해줘.
 ```
 
-### English Examples
+### EN
 
 ```text
 $harness
