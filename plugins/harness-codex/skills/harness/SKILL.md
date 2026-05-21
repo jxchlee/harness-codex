@@ -150,7 +150,7 @@ When validating generated harness files or trigger behavior, read `references/te
 ```
 
 ```text
-이 repo에 맞는 자동화 하네스를 만들어줘.
+이 repo에 맞는 자동화 하네스 계획을 제안해줘.
 ```
 
 ## EN Invocation Examples

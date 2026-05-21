@@ -1,5 +1,7 @@
 ﻿# Harness Codex
 
+Docs: [Installation](docs/installation.md) | [Architecture](docs/architecture.md) | [Migration](docs/migration-from-claude-harness.md) | [Roadmap](docs/roadmap.md)
+
 Usage examples: [KO](#ko-usage) | [EN](#en-usage)
 
 Harness Codex is a Codex-native guided workflow skill for shaping and maintaining a lightweight project harness. It helps Codex audit a repository, propose useful project instructions, and optionally create small, reviewable skills, review loops, subagent guidance, and automation suggestions.
@@ -46,7 +48,7 @@ When invoked in a Codex session, the `harness` skill guides Codex to:
 
 ## Install
 
-After this repository is pushed to GitHub, add it as a Codex plugin marketplace:
+Add this repository as a Codex plugin marketplace:
 
 ```bash
 codex plugin marketplace add jxchlee/harness-codex
@@ -63,6 +65,20 @@ Then install the `harness-codex` plugin from the Codex plugin marketplace UI or 
 ```bash
 codex plugin add harness-codex@jxchlee-harness-codex
 ```
+
+Verify the plugin is installed and enabled:
+
+```bash
+codex plugin list
+```
+
+Expected status:
+
+```text
+harness-codex@jxchlee-harness-codex (installed, enabled)
+```
+
+See [docs/installation.md](docs/installation.md) for local development notes and a known Windows Codex CLI install issue observed in one environment.
 
 ## Use
 
@@ -178,6 +194,8 @@ harness-codex/
 |   |-- architecture.md
 |   |-- installation.md
 |   |-- migration-from-claude-harness.md
+|   |-- examples/
+|   |   `-- claude-to-codex/
 |   |-- expansion-plan.md
 |   `-- roadmap.md
 |-- CHANGELOG.md
@@ -208,9 +226,10 @@ plugins/harness-codex/skills/harness/references/
 
 `SKILL.md` is the routing layer. It should stay concise and point to reference files only when those details are needed.
 
-Version 0.6 includes starter templates for `AGENTS.md`, four common repository domains, Codex-supported subagent pattern guidance, automation recipes, and testing guidance.
+Current version scope:
 
-Version 0.7 adds Claude Harness migration examples under `docs/examples/claude-to-codex/`.
+- Version 0.6 added starter templates for `AGENTS.md`, four common repository domains, Codex-supported subagent pattern guidance, automation recipes, and testing guidance.
+- Version 0.7 added Claude Harness migration rules and examples under `docs/examples/claude-to-codex/`.
 
 It should include frontmatter like:
 
