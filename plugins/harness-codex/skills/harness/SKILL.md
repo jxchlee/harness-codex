@@ -18,6 +18,7 @@ Keep this `SKILL.md` as the routing layer. Load references only when needed:
 - Read `references/skill-writing-guide.md` before creating or updating project-local skills.
 - Read `references/agents-md-guide.md` before creating or updating `AGENTS.md`.
 - Read `references/claude-migration.md` when `.claude/*`, `CLAUDE.md`, `TeamCreate`, `SendMessage`, or `TaskCreate` appears.
+- Consult `docs/examples/claude-to-codex/` when the user asks for a concrete Claude Harness migration example.
 - Read `references/evolution-loop.md` before recording changes or handling feedback.
 - Read `references/validation-checklist.md` before final verification of generated harness files.
 - Read `references/codex-subagent-capabilities.md` before recommending subagent orchestration.

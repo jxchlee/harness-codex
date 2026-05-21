@@ -99,7 +99,7 @@ Codex does not provide Claude-style Agent Teams as the default runtime. Harness 
 
 ## Current Version Scope
 
-Version 0.6 focuses on making the harness lifecycle useful after the first run while keeping detailed guidance behind Progressive Disclosure, providing starter templates, documenting Codex-supported subagent patterns, and adding automation/testing guidance:
+Version 0.7 focuses on making the harness lifecycle useful after the first run while keeping detailed guidance behind Progressive Disclosure, providing starter templates, documenting Codex-supported subagent patterns, adding automation/testing guidance, and formalizing Claude Harness migration:
 
 - Provide one plugin: `harness-codex`
 - Provide one main skill: `harness`
@@ -116,6 +116,7 @@ Version 0.6 focuses on making the harness lifecycle useful after the first run w
 - Map six Claude Harness team patterns to Codex manager-led delegation patterns
 - Provide safe automation recipes for recurring checks
 - Provide should-trigger and should-not-trigger testing guidance
+- Provide Claude-to-Codex before/after migration examples
 - Document installation and usage
 
 It should avoid adding custom MCP servers, complex scripts, or hidden automation until the basic skill flow is proven.

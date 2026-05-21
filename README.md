@@ -210,6 +210,8 @@ plugins/harness-codex/skills/harness/references/
 
 Version 0.6 includes starter templates for `AGENTS.md`, four common repository domains, Codex-supported subagent pattern guidance, automation recipes, and testing guidance.
 
+Version 0.7 adds Claude Harness migration examples under `docs/examples/claude-to-codex/`.
+
 It should include frontmatter like:
 
 ```markdown

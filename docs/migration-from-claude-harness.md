@@ -24,6 +24,16 @@ Claude Harness is built around Claude Code conventions such as `.claude/agents`,
 6. Document optional subagent roles instead of forcing them into every session.
 7. Suggest automations only when the user asks for recurring work.
 
+## File Conversion Guide
+
+| Claude Harness source | Harness Codex target | Rule |
+| --- | --- | --- |
+| `.claude/skills/<name>/SKILL.md` | `.agents/skills/<name>/SKILL.md` | Preserve the workflow, rewrite trigger wording and runtime assumptions. |
+| `.claude/agents/<name>.md` | `docs/harness/subagents.md` or project-local skills | Treat as role documentation unless Codex subagents are explicitly requested. |
+| `CLAUDE.md` harness pointer | `AGENTS.md` harness pointer | Keep the pointer short and link to detailed docs. |
+| Claude orchestrator skill | Codex workflow skill or `docs/harness/workflows.md` | Replace team messaging with manager-led delegation. |
+| Claude hooks or slash commands | Documentation or explicit commands | Do not install hidden recurring behavior. |
+
 ## Unsupported Claude Runtime Assumptions
 
 Do not translate these Claude Harness concepts as if Codex provides the same runtime:
@@ -37,6 +47,14 @@ Do not translate these Claude Harness concepts as if Codex provides the same run
 In Codex, model the current session as the manager. The manager may delegate to subagents only when the user explicitly asks for delegation, parallel agent work, or subagents. The manager owns task decomposition, result review, conflict resolution, and final integration.
 
 When preserving a Claude Harness team pattern, translate it as documentation or as a manager-led delegation plan unless Codex explicitly supports the needed runtime behavior.
+
+## Examples
+
+See the before/after migration examples:
+
+- `docs/examples/claude-to-codex/before-claude.md`
+- `docs/examples/claude-to-codex/after-codex.md`
+- `docs/examples/claude-to-codex/README.md`
 
 ## Compatibility Warning
 

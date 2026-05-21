@@ -1,6 +1,6 @@
 # Architecture
 
-Harness Codex is intentionally small. Version 0.6 is a Codex plugin that ships one skill named `harness`.
+Harness Codex is intentionally small. Version 0.7 is a Codex plugin that ships one skill named `harness`.
 
 The skill's job is to help Codex audit, generate, and maintain a project-local harness for the repository currently being worked on.
 
@@ -46,6 +46,8 @@ Version 0.6 adds automation and testing references:
 
 - `references/automation-recipes.md` documents safe recurring check patterns and when not to automate.
 - `references/testing-guide.md` documents manifest checks, should-trigger prompts, should-not-trigger prompts, and optional with-skill comparisons.
+
+Version 0.7 adds migration examples under `docs/examples/claude-to-codex/` to show how Claude Agent Team assumptions become Codex manager-led delegation guidance.
 
 ## Generated Project Harness
 

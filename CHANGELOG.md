@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 - 2026-05-21
+
+| Date | Change | Target | Reason |
+| --- | --- | --- | --- |
+| 2026-05-21 | Expanded Claude Harness migration rules with file conversion and Agent Team rewriting guidance. | `docs/migration-from-claude-harness.md`, `plugins/harness-codex/skills/harness/references/claude-migration.md` | Make migration practical instead of only conceptual. |
+| 2026-05-21 | Added before/after Claude-to-Codex migration examples. | `docs/examples/claude-to-codex/*` | Show how Claude runtime assumptions become Codex manager-led delegation guidance. |
+| 2026-05-21 | Bumped plugin version to 0.7.0. | `plugins/harness-codex/.codex-plugin/plugin.json` | Mark the migration examples release. |
+
 ## 0.6.0 - 2026-05-21
 
 | Date | Change | Target | Reason |
