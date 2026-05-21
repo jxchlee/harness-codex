@@ -162,7 +162,14 @@ harness-codex/
 |                   |-- skill-writing-guide.md
 |                   |-- agents-md-guide.md
 |                   |-- claude-migration.md
-|                   `-- evolution-loop.md
+|                   |-- evolution-loop.md
+|                   |-- validation-checklist.md
+|                   `-- templates/
+|                       |-- agents-md-base.md
+|                       |-- frontend.md
+|                       |-- backend.md
+|                       |-- data.md
+|                       `-- research.md
 |-- docs/
 |   |-- architecture.md
 |   |-- installation.md
@@ -196,6 +203,8 @@ plugins/harness-codex/skills/harness/references/
 ```
 
 `SKILL.md` is the routing layer. It should stay concise and point to reference files only when those details are needed.
+
+Version 0.4 includes starter templates for `AGENTS.md` and four common repository domains: frontend, backend, data, and research.
 
 It should include frontmatter like:
 

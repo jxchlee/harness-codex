@@ -1,6 +1,6 @@
 # Architecture
 
-Harness Codex is intentionally small. Version 0.3 is a Codex plugin that ships one skill named `harness`.
+Harness Codex is intentionally small. Version 0.4 is a Codex plugin that ships one skill named `harness`.
 
 The skill's job is to help Codex audit, generate, and maintain a project-local harness for the repository currently being worked on.
 
@@ -24,6 +24,17 @@ Version 0.3 uses Progressive Disclosure:
 - Detailed guidance lives under `plugins/harness-codex/skills/harness/references/`.
 - The main skill tells Codex when to read each reference file.
 - Reference files over 300 lines should include a table of contents.
+
+Version 0.4 adds optional templates:
+
+- `references/templates/agents-md-base.md`
+- `references/templates/frontend.md`
+- `references/templates/backend.md`
+- `references/templates/data.md`
+- `references/templates/research.md`
+- `references/validation-checklist.md`
+
+Templates are starting points, not mandatory output. The harness should use them only when they fit the target repository.
 
 ## Generated Project Harness
 

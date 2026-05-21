@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 - 2026-05-21
+
+| Date | Change | Target | Reason |
+| --- | --- | --- | --- |
+| 2026-05-21 | Added a base `AGENTS.md` template and domain templates for frontend, backend, data, and research repositories. | `plugins/harness-codex/skills/harness/references/templates/*` | Give new harness runs practical starting points without hardcoding every project. |
+| 2026-05-21 | Added a validation checklist for generated harness files. | `plugins/harness-codex/skills/harness/references/validation-checklist.md` | Make generated instructions and skills easier to review. |
+| 2026-05-21 | Bumped plugin version to 0.4.0. | `plugins/harness-codex/.codex-plugin/plugin.json` | Mark the template release. |
+
 ## 0.3.0 - 2026-05-21
 
 | Date | Change | Target | Reason |

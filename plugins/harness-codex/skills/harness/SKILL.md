@@ -19,6 +19,9 @@ Keep this `SKILL.md` as the routing layer. Load references only when needed:
 - Read `references/agents-md-guide.md` before creating or updating `AGENTS.md`.
 - Read `references/claude-migration.md` when `.claude/*`, `CLAUDE.md`, `TeamCreate`, `SendMessage`, or `TaskCreate` appears.
 - Read `references/evolution-loop.md` before recording changes or handling feedback.
+- Read `references/validation-checklist.md` before final verification of generated harness files.
+- Read `references/templates/agents-md-base.md` when drafting a new `AGENTS.md`.
+- Read one domain template when the repository clearly matches it: `templates/frontend.md`, `templates/backend.md`, `templates/data.md`, or `templates/research.md`.
 
 If this file approaches 500 lines, move detailed guidance into `references/` and leave a pointer here. Reference files over 300 lines should include a table of contents.
 
@@ -30,7 +33,7 @@ If this file approaches 500 lines, move detailed guidance into `references/` and
 3. Find repeated workflows, risky areas, and places where Codex would benefit from project-specific guidance.
 4. Propose the smallest useful harness before editing.
 5. If the user asked for implementation, create or update project-local files.
-6. Verify the generated files are valid Markdown or JSON.
+6. Verify the generated files are valid Markdown or JSON. Use `references/validation-checklist.md`.
 7. Close the loop: record changes, ask for feedback, and identify whether the harness itself should evolve.
 
 ## Phase 0: Existing Harness Audit
@@ -81,11 +84,22 @@ The plan must include:
 - optional automation recipes
 - files to create or edit
 
+If the repo clearly matches a supported domain, include the selected domain template and why. If no domain template fits cleanly, use only the base guidance.
+
 ## Generated Files
 
 Before creating or updating project-local skills, read `references/skill-writing-guide.md`.
 
 Before creating or updating `AGENTS.md`, read `references/agents-md-guide.md`.
+
+Before drafting a new `AGENTS.md`, read `references/templates/agents-md-base.md`.
+
+Use domain templates only when they fit the repository:
+
+- `references/templates/frontend.md` for frontend UI apps
+- `references/templates/backend.md` for APIs, services, workers, and CLIs
+- `references/templates/data.md` for analytics, ETL, dbt, notebooks, and ML pipelines
+- `references/templates/research.md` for research, experiments, evaluations, and literature workflows
 
 When migrating Claude Harness files, read `references/claude-migration.md` and translate intent rather than copying Claude-only runtime assumptions.
 
