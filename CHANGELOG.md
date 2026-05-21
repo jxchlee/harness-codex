@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 - 2026-05-21
+
+| Date | Change | Target | Reason |
+| --- | --- | --- | --- |
+| 2026-05-21 | Added safe automation recipes for test health, dependency review, documentation drift, and harness drift. | `plugins/harness-codex/skills/harness/references/automation-recipes.md` | Support recurring maintenance suggestions without silently creating risky automation. |
+| 2026-05-21 | Added testing guidance for manifests, trigger prompts, dry runs, and with-skill comparisons. | `plugins/harness-codex/skills/harness/references/testing-guide.md` | Make Harness Codex and generated harnesses easier to validate. |
+| 2026-05-21 | Bumped plugin version to 0.6.0. | `plugins/harness-codex/.codex-plugin/plugin.json` | Mark the automation and testing release. |
+
 ## 0.5.0 - 2026-05-21
 
 | Date | Change | Target | Reason |

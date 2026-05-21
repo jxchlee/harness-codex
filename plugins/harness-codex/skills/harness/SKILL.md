@@ -22,6 +22,8 @@ Keep this `SKILL.md` as the routing layer. Load references only when needed:
 - Read `references/validation-checklist.md` before final verification of generated harness files.
 - Read `references/codex-subagent-capabilities.md` before recommending subagent orchestration.
 - Read `references/agent-design-patterns.md` when the user asks for subagents, parallel agents, multi-agent planning, or a Codex adaptation of Claude Harness team patterns.
+- Read `references/automation-recipes.md` when the user asks for recurring checks, scheduled workflows, automation suggestions, or maintenance routines.
+- Read `references/testing-guide.md` when validating Harness Codex itself, generated project harnesses, or skill trigger behavior.
 - Read `references/templates/agents-md-base.md` when drafting a new `AGENTS.md`.
 - Read one domain template when the repository clearly matches it: `templates/frontend.md`, `templates/backend.md`, `templates/data.md`, or `templates/research.md`.
 
@@ -64,6 +66,12 @@ Create only the files that fit the user's request and the repository's shape:
 Do not create recurring automations unless the user explicitly asks for them.
 
 Do not spawn subagents unless the user explicitly asks for delegation, parallel agent work, or subagents.
+
+## Automation Guidance
+
+When the user asks for recurring checks, scheduled workflows, automation suggestions, or maintenance routines, read `references/automation-recipes.md`.
+
+Recommend automation only when it is deterministic, reviewable, and scoped. Do not create recurring automation without explicit user approval.
 
 ## Codex Subagent Boundary
 
@@ -125,6 +133,10 @@ When migrating Claude Harness files, read `references/claude-migration.md` and t
 At the end of any implemented harness change, read `references/evolution-loop.md`, record what changed, summarize future trigger phrases, and identify whether user feedback should update instructions, skills, docs, validation, or subagent guidance.
 
 Treat repeated feedback, repeated verification failures, or repeated manual workarounds as evolution triggers.
+
+## Harness Testing
+
+When validating generated harness files or trigger behavior, read `references/testing-guide.md`.
 
 ## KO Invocation Examples
 

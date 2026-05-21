@@ -1,6 +1,6 @@
 ﻿{
   "name": "harness-codex",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A Codex-native guided workflow skill for repository-specific instructions, skills, review loops, subagent guidance, and automation suggestions.",
   "author": {
     "name": "jxchlee",

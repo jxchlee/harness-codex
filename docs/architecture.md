@@ -1,6 +1,6 @@
 # Architecture
 
-Harness Codex is intentionally small. Version 0.5 is a Codex plugin that ships one skill named `harness`.
+Harness Codex is intentionally small. Version 0.6 is a Codex plugin that ships one skill named `harness`.
 
 The skill's job is to help Codex audit, generate, and maintain a project-local harness for the repository currently being worked on.
 
@@ -41,6 +41,11 @@ Version 0.5 documents Codex subagent orchestration boundaries:
 - `references/codex-subagent-capabilities.md` records what Codex-style delegation can and cannot assume.
 - `references/agent-design-patterns.md` maps six Claude Harness team patterns to Codex-supported manager-led delegation patterns.
 - Unsupported Agent Team behavior remains documented as unsupported rather than silently translated into fake runtime assumptions.
+
+Version 0.6 adds automation and testing references:
+
+- `references/automation-recipes.md` documents safe recurring check patterns and when not to automate.
+- `references/testing-guide.md` documents manifest checks, should-trigger prompts, should-not-trigger prompts, and optional with-skill comparisons.
 
 ## Generated Project Harness
 
