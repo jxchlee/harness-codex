@@ -11,7 +11,7 @@ Claude Harness is built around Claude Code conventions such as `.claude/agents`,
 | `.claude/skills/<name>/SKILL.md` | `.agents/skills/<name>/SKILL.md` |
 | `.claude/agents/<name>.md` | documented subagent role or local skill |
 | slash command | `$skill-name` or natural language trigger |
-| Claude team creation | Codex subagent guidance |
+| Claude team creation | Codex manager-led subagent guidance |
 | recurring review routine | Codex automation recipe |
 
 ## Migration Steps
@@ -24,9 +24,22 @@ Claude Harness is built around Claude Code conventions such as `.claude/agents`,
 6. Document optional subagent roles instead of forcing them into every session.
 7. Suggest automations only when the user asks for recurring work.
 
+## Unsupported Claude Runtime Assumptions
+
+Do not translate these Claude Harness concepts as if Codex provides the same runtime:
+
+- `TeamCreate`
+- `SendMessage`
+- `TaskCreate`
+- autonomous shared task queues
+- implicit shared memory between agents
+
+In Codex, model the current session as the manager. The manager may delegate to subagents only when the user explicitly asks for delegation, parallel agent work, or subagents. The manager owns task decomposition, result review, conflict resolution, and final integration.
+
+When preserving a Claude Harness team pattern, translate it as documentation or as a manager-led delegation plan unless Codex explicitly supports the needed runtime behavior.
+
 ## Compatibility Warning
 
 Do not copy a Claude Harness directory into a Codex project and expect it to run unchanged.
 
 The migration should be a translation, not a direct execution layer.
-

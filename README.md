@@ -2,7 +2,7 @@
 
 Usage examples: [KO](#ko-usage) | [EN](#en-usage)
 
-Harness Codex is a Codex-native guided workflow skill for shaping a lightweight project harness. It helps Codex inspect a repository, propose useful project instructions, and optionally create small, reviewable skills, review loops, subagent guidance, and automation suggestions.
+Harness Codex is a Codex-native guided workflow skill for shaping and maintaining a lightweight project harness. It helps Codex audit a repository, propose useful project instructions, and optionally create small, reviewable skills, review loops, subagent guidance, and automation suggestions.
 
 This project adapts the workflow idea behind Claude Harness into Codex primitives:
 
@@ -27,17 +27,19 @@ This repository is an independent Codex-native adaptation. It translates the use
 
 When invoked in a Codex session, the `harness` skill guides Codex to:
 
-1. Inspect the current repository.
-2. Identify languages, package managers, tests, docs, risky areas, and repeated workflows.
-3. Propose the smallest useful project harness.
-4. Optionally create or update `AGENTS.md`, project-local skills, and `docs/harness/*`.
-5. Suggest optional automations only when they fit the project and the user asks for recurring work.
-6. Keep generated changes small and reviewable.
+1. Audit existing `AGENTS.md`, `.agents/skills/*`, `.codex/skills/*`, `docs/harness/*`, and Claude migration source files.
+2. Inspect the current repository.
+3. Identify languages, package managers, tests, docs, risky areas, and repeated workflows.
+4. Propose the smallest useful project harness.
+5. Optionally create or update `AGENTS.md`, project-local skills, and `docs/harness/*`.
+6. Suggest optional automations only when they fit the project and the user asks for recurring work.
+7. Record changes and use feedback to evolve the harness.
 
 ## What It Does Not Do
 
 - It does not execute Claude `.claude/*` files.
 - It does not install Claude hooks or slash commands.
+- It does not assume Claude Agent Team primitives such as `TeamCreate`, `SendMessage`, or `TaskCreate` exist in Codex.
 - It does not create large agent hierarchies by default.
 - It does not create recurring automations without explicit user approval.
 - It does not replace project-specific judgment; it gives Codex a structured way to discover and document that judgment.
@@ -57,6 +59,10 @@ codex plugin marketplace add https://github.com/jxchlee/harness-codex.git
 ```
 
 Then install the `harness-codex` plugin from the Codex plugin marketplace UI or CLI flow.
+
+```bash
+codex plugin add harness-codex@jxchlee-harness-codex
+```
 
 ## Use
 
@@ -111,9 +117,11 @@ Depending on the request and repository shape, Harness Codex may propose or crea
 
 - `AGENTS.md`
 - `.agents/skills/<skill-name>/SKILL.md`
+- `.codex/skills/<skill-name>/SKILL.md` when a project already uses Codex-local skills
 - `docs/harness/overview.md`
 - `docs/harness/workflows.md`
 - `docs/harness/automation-recipes.md`
+- `docs/harness/CHANGELOG.md`
 
 By default, it starts small and avoids creating a large agent hierarchy unless the repository clearly benefits from it.
 
@@ -126,12 +134,13 @@ Analyze this TypeScript app and create a minimal Codex harness.
 
 Codex should then:
 
-1. Inspect files such as `package.json`, tests, source directories, docs, and existing agent instructions.
-2. Summarize the project shape and detected commands.
-3. Propose a small harness plan.
-4. Create files only if the user requested implementation.
-5. Validate generated Markdown and JSON.
-6. Summarize what changed and how to use it later.
+1. Audit existing harness files and migration source material.
+2. Inspect files such as `package.json`, tests, source directories, docs, and existing agent instructions.
+3. Summarize the project shape and detected commands.
+4. Propose a small harness plan.
+5. Create files only if the user requested implementation.
+6. Validate generated Markdown and JSON.
+7. Record what changed and summarize how to use it later.
 
 ## Repository Layout
 
@@ -146,12 +155,21 @@ harness-codex/
 |       |   `-- plugin.json
 |       `-- skills/
 |           `-- harness/
-|               `-- SKILL.md
+|               |-- SKILL.md
+|               `-- references/
+|                   |-- inspection-checklist.md
+|                   |-- plan-format.md
+|                   |-- skill-writing-guide.md
+|                   |-- agents-md-guide.md
+|                   |-- claude-migration.md
+|                   `-- evolution-loop.md
 |-- docs/
 |   |-- architecture.md
 |   |-- installation.md
 |   |-- migration-from-claude-harness.md
+|   |-- expansion-plan.md
 |   `-- roadmap.md
+|-- CHANGELOG.md
 |-- harness-codex-overview.md
 `-- README.md
 ```
@@ -170,6 +188,14 @@ The main skill should live at:
 ```text
 plugins/harness-codex/skills/harness/SKILL.md
 ```
+
+Detailed guidance should live under:
+
+```text
+plugins/harness-codex/skills/harness/references/
+```
+
+`SKILL.md` is the routing layer. It should stay concise and point to reference files only when those details are needed.
 
 It should include frontmatter like:
 

@@ -1,7 +1,7 @@
 ﻿{
   "name": "harness-codex",
-  "version": "0.1.0",
-  "description": "A Codex-native guided workflow skill for repository-specific instructions, skills, review loops, and automation suggestions.",
+  "version": "0.3.0",
+  "description": "A Codex-native guided workflow skill for repository-specific instructions, skills, review loops, subagent guidance, and automation suggestions.",
   "author": {
     "name": "jxchlee",
     "email": "",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Harness Codex",
     "shortDescription": "Guide Codex through a project harness workflow.",
-    "longDescription": "Harness Codex helps Codex analyze a repository, propose a minimal project harness, and optionally create reviewable instructions, skills, review loops, and automation suggestions.",
+    "longDescription": "Harness Codex helps Codex audit an existing repository harness, propose a minimal Codex-native project harness, and optionally create reviewable instructions, skills, review loops, subagent guidance, and automation suggestions.",
     "developerName": "jxchlee",
     "category": "Productivity",
     "capabilities": [
@@ -32,8 +32,7 @@
     "defaultPrompt": [
       "Create a minimal Codex harness plan for this repo.",
       "하네스 사용해서 이 프로젝트 구조를 정리해줘.",
-      "Use harness mode to suggest a harness plan, but do not edit files yet.",
-      "Suggest Codex skills and automations for this repo."
+      "Audit this repo's existing harness and suggest the next small improvement."
     ],
     "brandColor": "#2563EB"
   }

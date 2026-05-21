@@ -1,25 +1,48 @@
-﻿---
+---
 name: harness
 description: Use when the user says harness, 하네스, 하네스 사용, project harness, automation harness, or asks Codex to organize reusable project instructions, skills, subagent workflows, review loops, or automation suggestions for a repository.
 ---
 
 # Harness
 
-Invocation examples: [KO](#ko-invocation-examples) | [EN](#en-invocation-examples)
-
-Harness mode is a guided workflow for shaping a small Codex-native operating layer for a repository. It helps Codex understand how the project works, then propose or create project instructions, local skills, review checklists, and optional automation ideas.
+Harness mode is a guided workflow for shaping and maintaining a small Codex-native operating layer for a repository. It helps Codex understand how the project works, then propose or create project instructions, local skills, review checklists, subagent delegation guidance, and optional automation ideas.
 
 Do not assume Claude `.claude/*` files can run directly in Codex. Preserve the workflow idea, but express the result using Codex-native files and behavior.
 
+## Progressive Disclosure
+
+Keep this `SKILL.md` as the routing layer. Load references only when needed:
+
+- Read `references/inspection-checklist.md` when auditing or inspecting a repository.
+- Read `references/plan-format.md` before proposing a harness plan.
+- Read `references/skill-writing-guide.md` before creating or updating project-local skills.
+- Read `references/agents-md-guide.md` before creating or updating `AGENTS.md`.
+- Read `references/claude-migration.md` when `.claude/*`, `CLAUDE.md`, `TeamCreate`, `SendMessage`, or `TaskCreate` appears.
+- Read `references/evolution-loop.md` before recording changes or handling feedback.
+
+If this file approaches 500 lines, move detailed guidance into `references/` and leave a pointer here. Reference files over 300 lines should include a table of contents.
+
 ## Default Workflow
 
+0. Audit the existing harness state before designing anything new.
 1. Inspect the repository before proposing edits.
 2. Identify the project domain, languages, package managers, test commands, docs, and existing agent instructions.
 3. Find repeated workflows, risky areas, and places where Codex would benefit from project-specific guidance.
 4. Propose the smallest useful harness before editing.
 5. If the user asked for implementation, create or update project-local files.
 6. Verify the generated files are valid Markdown or JSON.
-7. Summarize what changed and how to invoke the harness later.
+7. Close the loop: record changes, ask for feedback, and identify whether the harness itself should evolve.
+
+## Phase 0: Existing Harness Audit
+
+Start every harness run by checking whether the target repository already has harness artifacts. Use `references/inspection-checklist.md` for the audit checklist, drift checks, and run-mode classification.
+
+Report the audit result before broad edits. Classify the run as one of:
+
+- New build
+- Extension
+- Maintenance
+- Migration
 
 ## Files To Consider
 
@@ -27,87 +50,52 @@ Create only the files that fit the user's request and the repository's shape:
 
 - `AGENTS.md`
 - `.agents/skills/<skill-name>/SKILL.md`
+- `.codex/skills/<skill-name>/SKILL.md` when the project already uses Codex-local skills
 - `docs/harness/overview.md`
 - `docs/harness/workflows.md`
 - `docs/harness/automation-recipes.md`
+- `docs/harness/CHANGELOG.md`
 
 Do not create recurring automations unless the user explicitly asks for them.
 
 Do not spawn subagents unless the user explicitly asks for delegation, parallel agent work, or subagents.
 
-## Repository Inspection Checklist
+## Codex Subagent Boundary
 
-Look for:
+Codex supports manager-led subagent delegation when the user explicitly asks for delegation, parallel agent work, or subagents. Treat the current Codex session as the manager: it decomposes work, assigns bounded tasks, reviews results, and integrates changes.
 
-- package files such as `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `pom.xml`, or `build.gradle`
-- test and lint commands
-- framework conventions
-- entry points and deployment files
-- existing `AGENTS.md`, `.agents/`, `.codex/`, `.claude/`, or docs
-- large or risky modules
-- repeated manual workflows mentioned in docs or scripts
+Do not describe Codex as having Claude-style Agent Teams by default. Do not generate instructions that assume `TeamCreate`, `SendMessage`, `TaskCreate`, autonomous shared task queues, or implicit shared memory across agents exist in Codex. Read `references/claude-migration.md` when translating Claude Harness material.
 
-Use fast file search tools such as `rg` or `rg --files` when available.
+## Harness Plan
 
-## Harness Plan Format
+Before editing, produce a concise plan. Use `references/plan-format.md` for the required fields and examples.
 
-When planning before edits, produce a concise plan with:
+The plan must include:
 
+- audit result and selected run mode
 - project summary
 - detected commands
 - proposed `AGENTS.md` guidance
 - proposed skills
+- subagent guidance only if requested or clearly useful
 - optional automation recipes
 - files to create or edit
 
-Keep the plan short enough for the user to review.
+## Generated Files
 
-## Generated Skill Guidelines
+Before creating or updating project-local skills, read `references/skill-writing-guide.md`.
 
-When creating project-local skills:
+Before creating or updating `AGENTS.md`, read `references/agents-md-guide.md`.
 
-- Use a clear `name` and `description` frontmatter block.
-- Make each skill specific to one repeated workflow.
-- Include concrete steps and verification.
-- Avoid broad, vague "do everything" skills.
-- Prefer one useful skill over many speculative skills.
+When migrating Claude Harness files, read `references/claude-migration.md` and translate intent rather than copying Claude-only runtime assumptions.
 
-Example:
+## Phase 7: Evolution Loop
 
-```markdown
----
-name: test-runner
-description: Use when validating code changes in this repository, especially before final responses or commits.
----
+At the end of any implemented harness change, read `references/evolution-loop.md`, record what changed, summarize future trigger phrases, and identify whether user feedback should update instructions, skills, docs, validation, or subagent guidance.
 
-# Test Runner
-
-Run the repository's standard checks in this order...
-```
-
-## AGENTS.md Guidelines
-
-When creating or updating `AGENTS.md`:
-
-- Capture repository-specific commands and conventions.
-- Keep instructions durable and concise.
-- Do not duplicate generic Codex behavior.
-- Include safety notes only when they are specific to the project.
-- Preserve existing user-authored instructions.
-
-## Claude Harness Migration
-
-If a project contains Claude Harness files:
-
-- Treat `.claude/skills/*` as source material for Codex skills.
-- Treat `.claude/agents/*` as source material for documented subagent roles or local skills.
-- Do not copy Claude-only tool calls as executable Codex instructions.
-- Convert slash-command language into skill triggers and natural language examples.
-- Explain compatibility gaps clearly.
+Treat repeated feedback, repeated verification failures, or repeated manual workarounds as evolution triggers.
 
 ## KO Invocation Examples
-
-These phrases should trigger this skill when available:
 
 ```text
 하네스 사용해서 이 프로젝트 구조를 정리해줘.
@@ -122,8 +110,6 @@ These phrases should trigger this skill when available:
 ```
 
 ## EN Invocation Examples
-
-These phrases should trigger this skill when available:
 
 ```text
 Use harness mode to analyze this repo and propose project-specific Codex skills.

@@ -12,7 +12,33 @@ At this stage, it is a guided workflow skill. It helps Codex analyze a project a
 codex plugin marketplace add jxchlee/harness-codex
 ```
 
-Then install the `harness-codex` plugin from the Codex plugin UI or CLI flow.
+Then install the plugin:
+
+```bash
+codex plugin add harness-codex@jxchlee-harness-codex
+```
+
+You can verify installation with:
+
+```bash
+codex plugin list
+```
+
+Expected status:
+
+```text
+harness-codex@jxchlee-harness-codex (installed, enabled)
+```
+
+## Known Install Issue
+
+On at least one Windows Codex CLI environment, `codex plugin add harness-codex@jxchlee-harness-codex` failed with:
+
+```text
+Error: failed to parse plugin.json: expected value at line 1 column 1
+```
+
+In that environment, the plugin manifest itself parsed successfully with PowerShell `ConvertFrom-Json`, and Codex recognized the plugin after the marketplace cache was copied into the local plugin cache and `config.toml` was updated. Keep this as a CLI compatibility issue until it is reproduced or resolved upstream.
 
 ## Invoke The Skill
 
