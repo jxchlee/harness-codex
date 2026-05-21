@@ -20,6 +20,8 @@ Keep this `SKILL.md` as the routing layer. Load references only when needed:
 - Read `references/claude-migration.md` when `.claude/*`, `CLAUDE.md`, `TeamCreate`, `SendMessage`, or `TaskCreate` appears.
 - Read `references/evolution-loop.md` before recording changes or handling feedback.
 - Read `references/validation-checklist.md` before final verification of generated harness files.
+- Read `references/codex-subagent-capabilities.md` before recommending subagent orchestration.
+- Read `references/agent-design-patterns.md` when the user asks for subagents, parallel agents, multi-agent planning, or a Codex adaptation of Claude Harness team patterns.
 - Read `references/templates/agents-md-base.md` when drafting a new `AGENTS.md`.
 - Read one domain template when the repository clearly matches it: `templates/frontend.md`, `templates/backend.md`, `templates/data.md`, or `templates/research.md`.
 
@@ -68,6 +70,21 @@ Do not spawn subagents unless the user explicitly asks for delegation, parallel 
 Codex supports manager-led subagent delegation when the user explicitly asks for delegation, parallel agent work, or subagents. Treat the current Codex session as the manager: it decomposes work, assigns bounded tasks, reviews results, and integrates changes.
 
 Do not describe Codex as having Claude-style Agent Teams by default. Do not generate instructions that assume `TeamCreate`, `SendMessage`, `TaskCreate`, autonomous shared task queues, or implicit shared memory across agents exist in Codex. Read `references/claude-migration.md` when translating Claude Harness material.
+
+## Phase 2: Subagent Pattern Selection
+
+Only design subagent orchestration when the user explicitly asks for delegation, parallel agent work, subagents, or multi-agent planning.
+
+Before recommending a pattern, read `references/codex-subagent-capabilities.md` and `references/agent-design-patterns.md`.
+
+Supported Codex framing is manager-led delegation. Prefer one of these adapted patterns when it fits:
+
+- Pipeline
+- Fan-out/Fan-in
+- Producer-Reviewer
+- Supervisor
+- Hierarchical Delegation, simplified to one manager layer
+- Expert Pool
 
 ## Harness Plan
 

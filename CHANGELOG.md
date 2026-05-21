@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 - 2026-05-21
+
+| Date | Change | Target | Reason |
+| --- | --- | --- | --- |
+| 2026-05-21 | Documented Codex subagent capability boundaries. | `plugins/harness-codex/skills/harness/references/codex-subagent-capabilities.md` | Make unsupported Claude Agent Team assumptions explicit. |
+| 2026-05-21 | Added six adapted agent design patterns for Codex manager-led delegation. | `plugins/harness-codex/skills/harness/references/agent-design-patterns.md` | Preserve the useful Harness architecture vocabulary without pretending Codex has the same runtime. |
+| 2026-05-21 | Bumped plugin version to 0.5.0. | `plugins/harness-codex/.codex-plugin/plugin.json` | Mark the Codex subagent pattern release. |
+
 ## 0.4.0 - 2026-05-21
 
 | Date | Change | Target | Reason |
